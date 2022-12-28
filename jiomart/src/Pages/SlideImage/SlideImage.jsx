@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, IconButton, useBreakpointValue } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 // Settings for the slider
 const settings = {
-  dots: true,
   arrows: false,
   fade: true,
   infinite: true,
   autoplay: true,
   speed: 500,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 2000,
   slidesToShow: 1,
   slidesToScroll: 1,
+  //   dots: true,
 };
 
 export default function Carousel() {
   // As we have used custom buttons, we need a reference variable to
   // change the state
-  const [slider, setSlider] = (React.useState < Slider) | (null > null);
+  const [slider, setSlider] = useState();
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
@@ -30,15 +31,52 @@ export default function Carousel() {
 
   // These are the images used in the slide
   const cards = [
-    "https://images.unsplash.com/photo-1612852098516-55d01c75769a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
-    "https://images.unsplash.com/photo-1627875764093-315831ac12f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
-    "https://images.unsplash.com/photo-1571432248690-7fd6980a1ae2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1669913386_1669808764_KV_1680x320.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672150254_RealmeHPMC.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672151930_Large-appliances-fest_1680x320.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672235198_OIL-BANNER-Desktop_New.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672147140_Fitness-Fest_3_1680x320.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672146585_FashionHPMCDesktop.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672147573_BeautyEssentialsDesktop.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672229150_MUMBAI.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672229150_MUMBAI.jpg",
+      link: "",
+    },
+    {
+      url: "https://www.jiomart.com/images/cms/aw_rbslider/slides/1672249288_HH_Banner-1680x320.jpg",
+      link: "",
+    },
   ];
 
   return (
     <Box
       position={"relative"}
-      height={"600px"}
+      height={"300px"}
       width={"full"}
       overflow={"hidden"}
     >
@@ -82,18 +120,22 @@ export default function Carousel() {
       >
         <BiRightArrowAlt />
       </IconButton>
+
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {cards.map((url, index) => (
-          <Box
-            key={index}
-            height={"6xl"}
-            position="relative"
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            backgroundImage={`url(${url})`}
-          />
+        {cards.map(({ url, index, link }) => (
+          <Link to={link}>
+            <Box
+              style={{
+                height: "300px",
+                position: "relative",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundImage: `url(${url})`,
+              }}
+            ></Box>
+          </Link>
         ))}
       </Slider>
     </Box>

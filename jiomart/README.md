@@ -11,6 +11,7 @@
 3. For react icon
       ` npm install react-icons --save `
 
-
+4. For Slider 
+      ` npm install react-slick --save `
 
 
