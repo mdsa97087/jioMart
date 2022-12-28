@@ -1,0 +1,52 @@
+* {
+      /* padding: 0%; */
+      /* margin: 0%; */
+}
+.mainDivNavbar{
+      border: 1px solid green;
+      width: 100%;
+      background-color: rgb(3, 143, 203);
+
+}
+
+
+.NavbarDiv {
+      border: 1px solid red;
+      width: 80vw;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      color: white;
+}
+
+.jiomart{
+      font-size: 2rem;
+      font-weight: 600;
+}
+.sub{
+      /* border: 1px solid; */
+      top: 12px;
+      left: -30px;
+}
+
+
+.NavbarInput {
+      /* border: 1px solid; */
+      padding: 10px;
+      padding-left: 25px;
+      border-radius: 8px;
+      width: 37.5vw;
+      outline: none;
+      color: black;
+}
+
+
+
+.cartNavbar{
+      display: flex;
+      font-weight: 600;
+      gap: 5px;
+      align-items: center;
+}
