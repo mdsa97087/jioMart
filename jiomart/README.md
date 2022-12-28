@@ -8,7 +8,8 @@
 
       ` npm install react-router-dom@6 `
 
-3. 
+3. For react icon
+      ` npm install react-icons --save `
 
 
 
