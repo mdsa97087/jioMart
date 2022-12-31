@@ -1,9 +1,57 @@
-import React from 'react'
+import {
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  Input,
+  useDisclosure,
+} from "@chakra-ui/react";
+import React from "react";
 
-function Logo() {
+export default function Logo() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
+
   return (
-    <div>Logo</div>
-  )
-}
+    <>
+      <Button
+        style={{
+          marginTop: "100px",
+          gap: "10px",
+        }}
+        ref={btnRef}
+        colorScheme="teal"
+        onClick={onOpen}
+       >
+        Open
+      </Button>
+      <Drawer
+        isOpen={isOpen}
+        placement="left"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+       >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Create your account</DrawerHeader>
 
-export default Logo
+          <DrawerBody>
+            <Input placeholder="Type here..." />
+          </DrawerBody>
+
+          <DrawerFooter>
+            <Button variant="outline" mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button colorScheme="blue">Save</Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}

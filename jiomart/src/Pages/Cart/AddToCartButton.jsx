@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContextProvider } from "../../Auth/AuthContext";
 
 function AddToCartButton() {
-  const [state, setstate] = useState(false);
-  const [count, setCount] = useState(0);
-  // const [dis, setDis] = useState(1);
+  // const [state, setstate] = useState(false);
+  // const [count, setCount] = useState(0);
+  
+  const {setstate,state,count,setCount} =useContext(AuthContextProvider)
+
 
   const clickCartAdd = () => {
     setstate(true);
-
     setCount(count + 1);
   };
 
