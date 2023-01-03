@@ -1,6 +1,4 @@
 import {
-  Container,
-  Drawer,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -8,46 +6,21 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContextProvider } from "../Auth/AuthContext";
-import Logo from "../Pages/Logo/Logo";
+import MenuBarDrawer from "../Pages/Drawer/MenuBarDrawer";
 import "./Navbar.css";
-// import {count} from ""
-// import {count} from "../Pages/Cart/AddToCartButton";
 
 function Nabvar() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
-
   const { state, count } = useContext(AuthContextProvider);
   return (
     <>
-      {/* <Drawer
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        hello Drawer
-        <Logo />
-      </Drawer> */}
       <div className="mainDivNavbar">
         <div className="NavbarDiv">
-          {/* <button ref={btnRef} colorScheme="teal" onClick={onOpen}> */}
-          <img
-            ref={btnRef}
-            onClick={onOpen}
-            className="logo"
-            src="https://i.imgur.com/IqJpOEs.png"
-            alt=""
-            width="35px"
-          />
-          {/* </button> */}
-          {/*   ------  DRAWER  */}
+          <MenuBarDrawer />
 
           <Link to="/">
             <span className="jiomart">JioMart</span>
@@ -61,7 +34,7 @@ function Nabvar() {
               width: "40vw",
               borderRadius: "8px",
             }}
-          >
+           >
             <div>
               <input
                 className="NavbarInput"

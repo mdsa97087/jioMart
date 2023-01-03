@@ -125,16 +125,28 @@ export default function Carousel() {
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map(({ url, index, link }) => (
           <Link to={link}>
-            <Box
+            <div
+              style={{
+                border:'1px solid black',
+                height: "400px",
+                position: "relative",
+              }}
+             >
+              <img src={url} alt=""
+              height={400}
+               />
+            </div>
+             {/* <Box
               style={{
                 height: "300px",
+                width:'100%',
                 position: "relative",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundImage: `url(${url})`,
               }}
-            ></Box>
+            ></Box>  */}
           </Link>
         ))}
       </Slider>

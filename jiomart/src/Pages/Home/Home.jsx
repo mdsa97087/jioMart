@@ -3,17 +3,12 @@ import Carousel from "../SlideImage/SlideImage";
 import { Link } from "react-router-dom";
 import AddToCartButton from "../Cart/AddToCartButton";
 import "./Home.css";
+import ApiCAll from "./ApiCAll";
 
 function Home() {
   return (
     <>
-      <div
-        className="AllMainDiv"
-        // style={{
-        //   marginTop: "100px",
-        //   gap: "10px",
-        // }}
-      >
+      <div className="AllMainDiv">
         <Carousel />
         <Link>
           <img
@@ -38,6 +33,7 @@ function Home() {
         <h6>Price</h6>
       </div>
       <AddToCartButton />
+      <ApiCAll />
     </>
   );
 }

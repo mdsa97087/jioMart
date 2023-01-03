@@ -12,29 +12,26 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-export default function Logo() {
+export default function MenuBarDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
   return (
     <>
-      <Button
-        style={{
-          marginTop: "100px",
-          gap: "10px",
-        }}
-        ref={btnRef}
-        colorScheme="teal"
-        onClick={onOpen}
-       >
-        Open
-      </Button>
+      <button ref={btnRef} onClick={onOpen}>
+        <img
+          className="logo"
+          src="https://i.imgur.com/IqJpOEs.png"
+          alt=""
+          width="35px"
+        />
+      </button>
       <Drawer
         isOpen={isOpen}
         placement="left"
         onClose={onClose}
         finalFocusRef={btnRef}
-       >
+      >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
@@ -42,6 +39,26 @@ export default function Logo() {
 
           <DrawerBody>
             <Input placeholder="Type here..." />
+            <img
+              src="https://i.imgur.com/uK9Tb8D.jpg
+            "
+              alt=""
+            />
+            <img
+              src="https://i.imgur.com/jMRaMUB.png
+            "
+              alt=""
+            />
+            <img
+              src="https://i.imgur.com/uK9Tb8D.jpg
+            "
+              alt=""
+            />
+            <img
+              src="https://i.imgur.com/jMRaMUB.png
+            "
+              alt=""
+            />
           </DrawerBody>
 
           <DrawerFooter>

@@ -14,4 +14,6 @@
 4. For Slider 
       ` npm install react-slick --save `
 
+5. Install Axios 
+      `npm i axios `
 
